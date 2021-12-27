@@ -2,7 +2,7 @@ button {
     margin-top: 10px;
 }
 
-.navbar a {
-    margin-left: 20px;
-    font-size: 20px;
+.required:after {
+  content: " *";
+  color: red
 }

@@ -19,7 +19,7 @@ func routeIndexGet(w http.ResponseWriter, r *http.Request) {
 		}
 		return
 	}
-	http.Error(w, "ErrorGet", http.StatusBadRequest)
+	http.Error(w, "", http.StatusBadRequest)
 }
 
 func routeSubmitPost(w http.ResponseWriter, r *http.Request) {
@@ -61,8 +61,7 @@ func routeSubmitPost(w http.ResponseWriter, r *http.Request) {
 		}
 		return
 	}
-	http.Error(w, "ErrorPost", http.StatusBadRequest)
-
+	http.Error(w, "", http.StatusBadRequest)
 }
 
 func main() {

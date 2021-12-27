@@ -9,14 +9,22 @@
   </head>
   <body>
     <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">Jira Backlog Converter</h1>
+        <hr class="my-4">
+        <p class="lead">Converting jira backlog into plain rows format</p>
+        <p class="lead">
+          <a href="" class="btn btn-primary" role="button">Copy</a>
+        </p>
+      </div>
       <form action="/process" method="post">
           <div class="form-group">
-              <label for="backlog">Backlog</label>
-              <textarea name="input_backlog" class="form-control" rows="13" placeholder=""></textarea>
+            <label class="required" for="backlog">Backlog</label>
+            <textarea name="input_backlog" class="form-control" rows="13" placeholder="" required></textarea>
           </div>
           <div class="mb-3">
-              <label for="project_name" class="form-label">Project Name</label>
-              <input name="input_project_name" class="form-control" placeholder="">
+            <label for="project_name" class="form-label">Project Name</label>
+            <input name="input_project_name" class="form-control" placeholder="">
           </div>
           <button type="submit" class="btn btn-primary">
             Generate
@@ -45,7 +53,7 @@
         <p class="lead">you can copy this results to your favorite app</p>
         <p>ex: <a href="https://www.planitpoker.com/">PlanITpoker</a></p>
         <p class="lead">
-          <a href="/process/copy" class="btn btn-primary" role="button">Copy</a>
+          <a href="" class="btn btn-primary disabled" role="button">Copy</a>
         </p>
       </div>
       <ul class="list-group">
