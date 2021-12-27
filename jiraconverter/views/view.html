@@ -1,0 +1,58 @@
+{{define "form"}}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/site.css">
+  </head>
+  <body>
+    <div class="container">
+      <form action="/process" method="post">
+          <div class="form-group">
+              <label for="backlog">Backlog</label>
+              <textarea name="input_backlog" class="form-control" rows="13" placeholder=""></textarea>
+          </div>
+          <div class="mb-3">
+              <label for="project_name" class="form-label">Project Name</label>
+              <input name="input_project_name" class="form-control" placeholder="">
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Generate
+          </button>
+      </form>
+    </div>
+  </body>
+</html>
+{{end}}
+
+{{define "results"}}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Results</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/site.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">Results</h1>
+        <hr class="my-4">
+        <p class="lead">you can copy this results to your favorite app</p>
+        <p>ex: <a href="https://www.planitpoker.com/">PlanITpoker</a></p>
+        <p class="lead">
+          <a href="/process/copy" class="btn btn-primary" role="button">Copy</a>
+        </p>
+      </div>
+      <ul class="list-group">
+        {{ range $i := .backlog}}
+        <li class="list-group-item">{{$i}}{{end}}</li>
+      </ul>
+    </div>
+  </body>
+</html>
+{{end}}
